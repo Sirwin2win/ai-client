@@ -8,7 +8,7 @@ export const register = createAsyncThunk(
     'auth/register',
     async(formData,thunkAPI)=>{
        try {
-         const response = await axios.post(`${API}/register`,formData)
+         const response = await axios.post(`${API}/register`,formData, { withCredentials: true })
         return response.data
        } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
