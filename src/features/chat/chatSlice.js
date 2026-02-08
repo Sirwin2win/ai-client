@@ -5,9 +5,9 @@ const API = 'https://session-chat-app.onrender.com/api/chat'
 
 export const createChat = createAsyncThunk(
     'chats/createChat',
-    async(formData,thunkAPI)=>{
+    async(data,thunkAPI)=>{
         try {
-            const response = await axios.post(`${API}`,formData)
+            const response = await axios.post('https://session-chat-app.onrender.com/api/chat',data, { withCredentials: true })
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message)

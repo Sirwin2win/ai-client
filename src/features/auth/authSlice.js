@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = 'https://session-chat-app.onrender.com/api/auth/'
+const API = 'https://session-chat-app.onrender.com/api/auth'
 
 
 export const register = createAsyncThunk(

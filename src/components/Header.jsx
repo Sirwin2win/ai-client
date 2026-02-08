@@ -16,21 +16,24 @@ const Header = () => {
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/contact">Contact Us</Link>
+          <Link className="nav-link" to="/contact">Register</Link>
         </li>
-        <li className="nav-item dropdown">
+        {/* <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Account
           </Link>
           <ul className="dropdown-menu">
-            <li><Link className="dropdown-item" to="#">Action</Link></li>
+            <li><Link className="dropdown-item" to="#">Register</Link></li>
             <li><Link className="dropdown-item" to="#">Another action</Link></li>
             <li><hr className="dropdown-divider" /></li>
             <li><Link className="dropdown-item" to="#">Something else here</Link></li>
           </ul>
+        </li> */}
+        <li className="nav-item">
+          <Link className="nav-link" to='/about'>Login</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link disabled" aria-disabled="true">Disabled</Link>
+          <Link className="nav-link" to='/chat'>Chat AI</Link>
         </li>
       </ul>
       <form className="d-flex" role="search">

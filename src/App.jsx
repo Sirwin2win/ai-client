@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js'
+import About from './pages/About'
+import Chat from './pages/Chat'
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/chat' element={<Chat />} />
         </Route>
       </Routes>
       </BrowserRouter>
