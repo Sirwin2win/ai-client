@@ -26,7 +26,7 @@ const ChatComponent = () => {
         <form method='post' onSubmit={handleSubmit}>
           {status==='failed'&& <p className='text-danger'>{error}</p>}
             <div className='container' style={{position:"relative"}}>
-                <input type="text" value={data} onChange={(e)=>setPrompt(e.target.value)} name='prompt' className='form-control mx-5' style={{height:'50px',}}  />
+                <input type="text" value={prompt} onChange={(e)=>setPrompt(e.target.value)} name='prompt' className='form-control mx-5' style={{height:'50px',}}  />
                 <IoMdSend size={50} onSubmit={handleSubmit} className='text-primary' style={{position:'absolute', bottom:0,right:-20}} />
 
             </div>
