@@ -18,24 +18,6 @@ export const register = createAsyncThunk(
     }
 )
 
-// export const login = createAsyncThunk(
-//     'auth/login',
-//     async(data,thunkAPI)=>{
-//        try {
-//          const response = fetch(`${API}/login`, {
-//   method: "POST",
-//   credentials: "include",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify(data)
-// });
-
-//         return response.data
-//        } catch (error) {
-//         return thunkAPI.rejectWithValue(error.message)
-//        }
-//     }
-// )
-
 export const login = createAsyncThunk(
     'auth/login',
     async(formData,thunkAPI)=>{
