@@ -9,7 +9,7 @@ export const createChat = createAsyncThunk(
   'chats/createChat',
   async (prompt, thunkAPI) => {
     try {
-      const response = await axios.post(API, prompt);
+      const response = await axios.post(API, {prompt});
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
