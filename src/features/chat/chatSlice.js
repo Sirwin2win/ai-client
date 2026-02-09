@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const API = 'https://session-chat-app.onrender.com/api/chat'
+axios.defaults.withCredentials = true;
+
 
 export const createChat = createAsyncThunk(
   'chats/createChat',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post(API, data, {
-        withCredentials: true   
-      });
+      const response = await axios.post(API, data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
