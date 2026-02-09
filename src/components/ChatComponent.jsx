@@ -16,6 +16,13 @@ const ChatComponent = () => {
   }
   return (
     <div>
+      {chats.map(chat=>(
+        <div className='row'>
+          <p className='col-sm-6'>{chat.role}</p>
+          <p className='col-sm-6'>{chat.parts}</p>
+
+        </div>
+      ))}
         <form method='post' onSubmit={handleSubmit}>
           {status==='failed'&& <p className='text-danger'>{error}</p>}
             <div className='container' style={{position:"relative"}}>
