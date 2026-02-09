@@ -4,7 +4,7 @@ import axios from "axios";
 const API = 'https://session-chat-app.onrender.com/api/chat'
 axios.defaults.withCredentials = true;
 
-
+// create Chat
 export const createChat = createAsyncThunk(
   'chats/createChat',
   async (prompt, thunkAPI) => {
@@ -16,6 +16,19 @@ export const createChat = createAsyncThunk(
     }
   }
 );
+
+// Get chat
+export const getChat = createAsyncThunk(
+  'chats/getChat',
+  async(__dirname,thunkAPI)=>{
+try {
+      const response = await axios.get(API)
+      return response.data
+} catch (error) {
+  return thunkAPI.rejectWithValue(error.message);
+}
+  }
+)
 
 
 const chatSlice = createSlice({
@@ -39,6 +52,19 @@ const chatSlice = createSlice({
         .addCase(createChat.rejected,(state,action)=>{
             state.status = 'failed'
             state.error = action.payload
+        })
+        // getChat
+        .addCase(getChat.pending,(state)=>{
+          state.status = 'loading'
+          state.error = null
+        })
+        .addCase(getChat.fulfilled,(state,action)=>{
+          state.status = 'succeeded'
+          state.chats = action.payload
+        })
+        .addCase(getChat.rejected,(state,action)=>{
+          state.status = 'failed'
+          state.error = action.payload
         })
     }
 })
