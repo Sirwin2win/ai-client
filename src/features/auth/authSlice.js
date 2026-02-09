@@ -20,7 +20,7 @@ export const login = createAsyncThunk(
     'auth/login',
     async(formData,thunkAPI)=>{
        try {
-         const response = await axios.post(`${API}/login`,formData)
+         const response = await axios.post(`${API}/login`,formData, { withCredentials: true })
         return response.data
        } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
