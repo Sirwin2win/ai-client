@@ -7,9 +7,9 @@ axios.defaults.withCredentials = true;
 
 export const createChat = createAsyncThunk(
   'chats/createChat',
-  async (data, thunkAPI) => {
+  async (prompt, thunkAPI) => {
     try {
-      const response = await axios.post(API, data);
+      const response = await axios.post(API, prompt);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
