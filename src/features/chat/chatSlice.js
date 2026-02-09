@@ -4,16 +4,19 @@ import axios from "axios";
 const API = 'https://session-chat-app.onrender.com/api/chat'
 
 export const createChat = createAsyncThunk(
-    'chats/createChat',
-    async(data,thunkAPI)=>{
-        try {
-            const response = await axios.post('https://session-chat-app.onrender.com/api/chat',data)
-            return response.data
-        } catch (error) {
-            return thunkAPI.rejectWithValue(error.message)
-        }
+  'chats/createChat',
+  async (data, thunkAPI) => {
+    try {
+      const response = await axios.post(API, data, {
+        withCredentials: true   
+      });
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
-)
+  }
+);
+
 
 const chatSlice = createSlice({
     name:'chats',
