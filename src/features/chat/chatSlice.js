@@ -47,7 +47,7 @@ const chatSlice = createSlice({
         })
         .addCase(createChat.fulfilled,(state,action)=>{
             state.status = 'succeeded'
-            state.chats = action.payload
+            state.chats.push(action.payload)
         })
         .addCase(createChat.rejected,(state,action)=>{
             state.status = 'failed'
