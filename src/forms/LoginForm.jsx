@@ -20,10 +20,10 @@ const LoginForm = () => {
     }
 
     const handleSubmit = (e)=>{
-        e.preventDefault()
-        dispatch(login(data))
+        e.preventDefault();
+        dispatch(login(data));
         if(status==='succeeded'){
-            navigate('/chat')
+            navigate('/chat');
         }
     }
 

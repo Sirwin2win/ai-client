@@ -20,7 +20,7 @@ export const createChat = createAsyncThunk(
 // Get chat
 export const getChat = createAsyncThunk(
   'chats/getChat',
-  async(__dirname,thunkAPI)=>{
+  async(_,thunkAPI)=>{
 try {
       const response = await axios.get(API)
       return response.data
@@ -47,7 +47,7 @@ const chatSlice = createSlice({
         })
         .addCase(createChat.fulfilled,(state,action)=>{
             state.status = 'succeeded'
-            state.chats.push(action.payload)
+            state.chats=action.payload
         })
         .addCase(createChat.rejected,(state,action)=>{
             state.status = 'failed'

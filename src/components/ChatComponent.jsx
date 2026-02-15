@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { IoMdSend } from "react-icons/io";
-import { createChat } from '../features/chat/chatSlice';
+import { createChat, getChat } from '../features/chat/chatSlice';
 import { useDispatch, useSelector } from 'react-redux';
+
 
 
 
@@ -14,6 +15,14 @@ const ChatComponent = () => {
       dispatch(createChat(prompt))
       console.log(prompt)
   }
+
+  console.log(chats)
+
+  // useEffect(()=>{
+  //   if(status==='idle'){
+  //     dispatch(getChat())
+  //   }
+  // },[])
   return (
     <div>
       {chats.map(chat=>(
