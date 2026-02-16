@@ -30,7 +30,7 @@ const About = () => {
         setData({email:"",password:""})
     }
   return (
-   <div>
+   <div className='container'>
         <h1 className='text-primary text-center my-3'>Welcome back</h1>
         <div className='container'>
             <form method='post'>

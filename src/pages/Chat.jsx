@@ -30,12 +30,12 @@ const Chat = () => {
     }
   },[])
   return (
-    <div>
+    <div className='container'>
       <h5 className='my-5 text-primary text-center'>Hello!, I am your AI agent, ask me anything</h5>
       {chats.map(chat=>(
         <div className='row'>
-          <p className='col-sm-6'>{chat.role}</p>
-          <p className='col-sm-6'>{chat.parts}</p>
+          <p className='col-sm-4'>{chat.role}</p>
+          <p className={`col-sm-8 ${chat.role==='model'? 'text-start':'text-end'}`} style={{}}>{chat.parts}</p>
 
         </div>
       ))}
