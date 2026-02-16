@@ -18,14 +18,16 @@ const About = () => {
         setData(data=>({...data,[name]:value}))
     }
 
+    useEffect(() => {
+    if (status === 'succeeded') {
+        navigate('/chat');
+    }
+}, [status, navigate]);
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         dispatch(login(data));
-        data.password = "";
-        data.email = "";
-        if(status==='succeeded'){
-            navigate('/chat');
-        }
+        setData({email:"",password:""})
     }
   return (
    <div>
