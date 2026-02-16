@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import About from './pages/About'
 import Chat from './pages/Chat'
+import NotFound from './components/NotFound'
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />
           <Route path='/chat' element={<Chat />} />
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
       </BrowserRouter>
