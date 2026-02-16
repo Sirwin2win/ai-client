@@ -35,7 +35,8 @@ const authSlice = createSlice({
     initialState:{
         users:[],
         status:'idle',
-        error:null
+        error:null,
+        msg:null
     },
     reducers:{},
     extraReducers:(builder)=>{
@@ -58,7 +59,7 @@ const authSlice = createSlice({
         })
         .addCase(login.fulfilled,(state,action)=>{
             state.status = 'succeeded'
-            state.users = action.payload
+            state.msg = action.payload
         })
         .addCase(login.rejected,(state,action)=>{
             state.status = 'failed'

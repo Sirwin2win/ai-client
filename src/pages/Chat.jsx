@@ -2,10 +2,13 @@ import React, {useState,useEffect} from 'react'
 import { IoMdSend } from "react-icons/io";
 import { createChat, getChat } from '../features/chat/chatSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 const Chat = () => {
  const [prompt, setPrompt] = useState('')
   const {chats,status,error} = useSelector(state=>state.chats)
+  const {msg} = useSelector(state=>state.auth)
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleSubmit = (e)=>{
     e.preventDefault()
@@ -15,14 +18,20 @@ const Chat = () => {
 
   console.log(chats)
 
-  // useEffect(()=>{
-  //   if(status==='idle'){
-  //     dispatch(getChat())
-  //   }
-  // },[])
+  useEffect(()=>{
+    if(status==='idle'){
+      dispatch(getChat())
+    }
+  },[])
+
+  useEffect(()=>{
+    if(msg!='Logged in successfully!'){
+      navigate('/login')
+    }
+  },[])
   return (
     <div>
-      <h5 className='my-5 text-primary'>Hello!, I am your AI agent, ask me anything</h5>
+      <h5 className='my-5 text-primary text-center'>Hello!, I am your AI agent, ask me anything</h5>
       {chats.map(chat=>(
         <div className='row'>
           <p className='col-sm-6'>{chat.role}</p>

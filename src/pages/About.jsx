@@ -21,6 +21,8 @@ const About = () => {
     const handleSubmit = (e)=>{
         e.preventDefault();
         dispatch(login(data));
+        data.password = "";
+        data.email = "";
         if(status==='succeeded'){
             navigate('/chat');
         }
