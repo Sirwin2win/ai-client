@@ -35,7 +35,7 @@ const Chat = () => {
       {chats.map(chat=>(
         <div className=''>
           {/* // <p className='col-sm-4'>{chat.role}</p> */}
-          <p className={`col-sm-8 ${chat.role==='model'? 'text-start':'text-end text-bg-secondary'}`}>{chat.parts}</p>
+          <p className={`col-sm-8 ${chat.role==='model'? 'text-start p-5 mb-4 bg-light rounded-3':'text-end'}`}>{chat.parts}</p>
 
         </div>
       ))}
