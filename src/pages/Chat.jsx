@@ -26,7 +26,7 @@ const Chat = () => {
 
   useEffect(()=>{
     if(msg!='Logged in successfully!'){
-      navigate('/login')
+      navigate('/about')
     }
   },[])
   return (
