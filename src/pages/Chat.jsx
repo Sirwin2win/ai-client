@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router';
 const Chat = () => {
  const [prompt, setPrompt] = useState('')
   const {chats,status,error} = useSelector(state=>state.chats)
-  const {msg} = useSelector(state=>state.auth)
+  const {userId} = useSelector(state=>state.auth)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleSubmit = (e)=>{
@@ -25,7 +25,7 @@ const Chat = () => {
   },[])
 
   useEffect(()=>{
-    if(msg!='Logged in successfully!'){
+    if(!userId){
       navigate('/about')
     }
   },[])
