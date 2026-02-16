@@ -34,7 +34,7 @@ const Chat = () => {
       <h5 className='my-5 text-primary text-center'>Hello!, I am your AI agent, ask me anything</h5>
       {chats.map(chat=>(
         <div className=''>
-          {/* // <p className='col-sm-4'>{chat.role}</p> */}
+          // <p className='col-sm-4'></p>
           <p className={`col-sm-8 ${chat.role==='model'? 'text-start p-5 mb-4 bg-light rounded-3':'text-end'}`}>{chat.parts}</p>
 
         </div>
