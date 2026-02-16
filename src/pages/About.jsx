@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { login } from '../features/auth/authSlice'
 
 const About = () => {
@@ -41,6 +41,10 @@ const About = () => {
                 <div className='mx-5 mb-5'>
                     <label htmlFor="password">Password</label>
                     <input type="password" id='password' onChange={handleChange} value={data.password} className='form-control' name='password' placeholder='-enter your password-' />
+                </div>
+                <div className='mx-5 mb-5'>
+                <p className='mx-2'>Don't have an account?</p>
+                <Link to={'/contact'}>register</Link>
                 </div>
                 <div className='mx-5 mb-5'>
                     {/* <input type="submit" value='Login' onClick={handleSubmit} className='form-control text-bg-primary' /> */}
