@@ -13,7 +13,8 @@ const Chat = () => {
   const handleSubmit = (e)=>{
     e.preventDefault()
       dispatch(createChat(prompt))
-      console.log(prompt)
+      // console.log(prompt)
+      setPrompt('')
   }
 
   console.log(chats)
@@ -33,8 +34,8 @@ const Chat = () => {
     <div className='container'>
       <h5 className='my-5 text-primary text-center'>Hello!, I am your AI agent, ask me anything</h5>
       {chats.map(chat=>(
-        <div className=''>
-          <p className='col-sm-4'></p>
+        <div className='' key={chat._id}>
+          <p className='col-sm-4 me-5'></p>
           <p className={`col-sm-8 ${chat.role==='model'? 'text-start p-5 mb-4 bg-light rounded-3':'text-end'}`}>{chat.parts}</p>
 
         </div>
